@@ -1,0 +1,95 @@
+*, *:before, *after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-bg-1: #008080;
+    --color-bg-2: #FEF9E7;
+    --color-btn: #2196f3;
+    --color-paso_encabezado: orange;
+    --color-shadow: #222222;
+    --color-bordeer-input: #dddddd;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    background-image: url(img/zorro-en-amanecer-del-bosque.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+.formulario_registro_encabezado{
+    height: 50%;
+    width: 100%;
+    background-color: #008080;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+    margin: 20px; 
+    padding: 20px; 
+}
+
+.formulario_registro{
+    padding: 20px 15px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.progresbar{
+    display: flex;
+    list-style: none;
+    margin-bottom: 15px;
+    counter-reset: paso;
+}
+
+.progresbar_opcion{
+    width: 100%;
+    text-align: center;
+    font-size: .7em;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.progresbar_opcion:before{
+    display: flex;
+    content: counter(paso);
+    counter-increment: paso;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    margin: 0 auto 5px;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.progresbar_opcion:after{
+    display: block;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: 10px;
+    left: -50%;
+    z-index: 1;
+}
