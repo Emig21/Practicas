@@ -1,30 +1,9 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    
-    $campos = array(
-        "correo" => "Correo",
-        "password1" => "Contraseña",
-        "password2" => "Repetir Contraseña",
-        "nombre" => "Nombre",
-        "apellido" => "Apellido",
-        "telefono" => "Teléfono"
-    );
-
-    $errores = array();
-
-    // Verificar cada campo individualmente
-    foreach ($campos as $campo => $etiqueta) {
-        if (empty($_GET[$campo])) {
-            $errores[] = "El campo de $etiqueta está vacío.";
-        }
-    }
-
-    if (!empty($errores)) {
-        foreach ($errores as $error) {
-            echo $error . "<br>";
-        }
-        exit;
-    }
-
+if (empty($_GET["correo"]) || empty($_GET["password1"]) || empty($_GET["password2"])) {
+    echo "Ingrese correo y contraseña.";
+    echo '<button onclick="history.go(-1);">Regresar</button>';
+} else {
+    echo "¡Todos los campos se han llenado satisfactoriamente!";
+    echo '<button onclick="history.go(-1);">Regresar</button>';
 }
 ?>
