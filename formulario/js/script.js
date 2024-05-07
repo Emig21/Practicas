@@ -25,3 +25,5 @@ form.addEventListener('click', function(e){
         pasosiguiente.classList.remove('inactive');
     }
 });
+
+
