@@ -7,17 +7,17 @@ form.addEventListener('click', function(e){
     let anterior = elemento.classList.contains("paso_boton--regresa");
     if (siguiente || anterior){
         let actual=document.getElementById('paso-' + elemento.dataset.step);
-        console.log("aqui: " + elemento.dataset.step);
-        let pasosiguiente=document.getElementById('paso-' + elemento.dataset.to_step);
+         let pasosiguiente=document.getElementById('paso-' + elemento.dataset.to_step);
         actual.addEventListener('animationend', function callback(){
             actual.classList.remove('active');
             pasosiguiente.classList.add('active');
             if (siguiente){
                 actual.classList.add('to-left');
                 progressOpcion[elemento.dataset.to_step-1].classList.add('active');
-            }else {
+             }else {
                 pasosiguiente.classList.remove('to-left');
-                progressOpcion[elemento.dataset.to_step-1].classList.remove('active');
+                progressOpcion[elemento.dataset.to_step].classList.remove('active');
+                
             }
             actual.removeEventListener('animationend', callback);
         });
