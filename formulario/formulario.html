@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="principal">   
-        <form action="funcion.php" class="formulario_registro" method="get">
+        <form action="funcion.php" class="formulario_registro" method="post">
             <div class="formulario_registro_encabezado">
                 <ul class="progresbar">
                     <li class="progresbar_opcion active">Paso 1</li>
@@ -57,7 +57,7 @@
                     </div>
                     <div class="paso_fin">
                         <button type="button" class="paso_boton paso_boton--regresa" data-step="3" data-to_step="2">Regresar</button>
-                        <input type="submit" value="Registrar" class="paso_boton" id="registrar-btn">
+                        <input type="submit" value="Registrar" class="paso_boton" id="registrar-btn" name="registrar">
                     </div>
                 </div>
             </div>
